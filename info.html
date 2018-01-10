@@ -4,18 +4,37 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>ESP8266 Light</title>
+		<style type="text/css" media="screen">
+			.button { background-color: #4CAF50; border: none; color: white;
+					padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block;
+					font-size: 16px; margin:4px 2px; cursor: pointer; }
+			table, th, td { border: 1px solid black; border-collapse: collapse; }
+			th, td { padding: 10px; }
+		</style>
 	</head>
 	<body style="background-color:powderblue">
 		<h1 style="color:blue">Освітлення Рослин</h1>
-		<p style="color:red">Температура приладу: </p>
-		<p style="color:#800000">Рівень зовнішнього <br>освітлення: </p>
-		<p>Поточний час:</p><br><br>
+		<table> <tr> <td style="color:red"><b>Температура приладу</b></td>
+				<td>150</td> </tr> <tr>
+				<td>Рівень зовнішнього<br> освітлення</td>
+				<td>50</td> </tr> <tr>
+				<td>Поточний час</td>
+				<td>12:00</td> </tr> </table>
 		<form action="" method="post" accept-charset="utf-8">
-			<input  type="submit" value="Update" name="update" id="update" style="font-size:20px;border:2;background-color:#FFE4C4"/>
+			<input  type="submit" class="button" value="Update" name="update" id="update" />
 		</form>
 		<h1 style="color:green">Налаштування:</h1>
 		<form action="" method="post" accept-charset="utf-8">
-			Температура аварійного <br>виключення: <input type="number" value="100" name="tempOff" id="tempOff" min="0" max="200"/>
+			<fieldset>
+				<legend> Температура аварійного <br>виключення:</legend>
+				<input type="number" value="100" name="tempOff" id="tempOff" min="0" max="200"/>
+			</fieldset>
+		</form>
+		<form action="" method="post">
+			<fieldset>
+				<legend> Межа зовнішнього <br>освітлення:</legend>
+				<input type="number" value="80" name="lightOff" id="lightOff" min="0" max="100"/>
+			</fieldset>	
 		</form>
 	</body>
 </html>

@@ -1,17 +1,44 @@
 <!-- Macros -->
 <!-- ^XXj@a -->
-<!-- ^iconn:send('\nf)lDF(lpj@a -->
+<!-- ^iconn:send('\nf)lDF(lpj@b -->
 conn:send('<!DOCTYPE html>\n')
-conn:send(<html>
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
-<title>ESP8266 Light</title>
-</head>
-<body>
-<h1 style="color:blue">Освітлення Рослин</h1>
-<p style="color:red">Температура приладу:</p>
-<p style="color:#800000">Рівень освітлення:</p>
-<p>Поточний час:</p>
-</body>
-</html>
+conn:send('<html>\n')
+conn:send('<head>\n')
+conn:send('<meta charset="UTF-8" />\n')
+conn:send('<meta name="viewport" content="width=device-width" />\n')
+conn:send('<title>ESP8266 Light</title>\n')
+conn:send('<style type="text/css" media="screen">\n')
+conn:send('.button { background-color: #4CAF50; border: none; color: white;\n')
+conn:send('padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block;\n')
+conn:send('font-size: 16px; margin:4px 2px; cursor: pointer; }\n')
+conn:send('table, th, td { border: 1px solid black; border-collapse: collapse; }\n')
+conn:send('th, td { padding: 10px; }\n')
+conn:send('</style>\n')
+conn:send('</head>\n')
+conn:send('<body style="background-color:powderblue">\n')
+conn:send('<h1 style="color:blue">Освітлення Рослин</h1>\n')
+conn:send('<table> <tr> <td style="color:red"><b>Температура приладу</b></td>\n')
+conn:send('<td>150</td> </tr> <tr>\n')
+conn:send('<td>Рівень зовнішнього<br> освітлення</td>\n')
+conn:send('<td>50</td> </tr> <tr>\n')
+conn:send('<td>Поточний час</td>\n')
+conn:send('<td>12:00</td> </tr> </table>\n')
+conn:send('<form action="" method="post" accept-charset="utf-8">\n')
+conn:send('<input  type="submit" class="button" value="Update" name="update" id="update" />\n')
+conn:send('<input type="submit" value="Start" class="button" name="btn_start" id="btn_start"/>\n')
+conn:send('</form>\n')
+conn:send('<h1 style="color:green">Налаштування:</h1>\n')
+conn:send('<form action="" method="post" accept-charset="utf-8">\n')
+conn:send('<fieldset>\n')
+conn:send('<legend> Температура аварійного <br>виключення:</legend>\n')
+conn:send('<input type="number" value="100" name="tempOff" id="tempOff" min="0" max="200"/>\n')
+conn:send('</fieldset>\n')
+conn:send('</form>\n')
+conn:send('<form action="" method="post">\n')
+conn:send('<fieldset>\n')
+conn:send('<legend> Межа зовнішнього <br>освітлення:</legend>\n')
+conn:send('<input type="number" value="80" name="lightOff" id="lightOff" min="0" max="100"/>\n')
+conn:send('</fieldset>	\n')
+conn:send('</form>\n')
+conn:send('</body>\n')
+conn:send('</html>\n')
